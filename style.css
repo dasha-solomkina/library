@@ -87,6 +87,11 @@ a:hover {
     color: white;
 }
 
+.read.notread {
+    background-color: var(--not-read);
+}
+
+
 .remove {
     font-size: 22px;
     border-radius: 10px;
@@ -100,6 +105,9 @@ a:hover {
     cursor: pointer;
 }
 
+#hidden {
+    display: none;
+}
 
 #pop-content {
     position: absolute;
@@ -167,6 +175,7 @@ input[type="checkbox"]::before {
 input[type="checkbox"]:checked::before {
     visibility: visible;
 }
+
   
 .readbox {
     display: flex;
