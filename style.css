@@ -95,6 +95,37 @@ a:hover {
 }
 
 .read:hover,
-.remove:hover {
+.remove:hover,
+#submit {
     cursor: pointer;
 }
+
+
+#pop-content {
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    text-align: center;
+    border-radius: 10px;
+    padding: 25px 25px;
+}
+
+#myForm {
+    display: grid;
+    grid-template-rows: repeat(6, 1fr);
+    height: 300px;
+
+}
+
+
+/* Mb add later for the Read  since it is the same style */
+#submit {
+    background-color: var(--read);
+    font-size: 22px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+}
+

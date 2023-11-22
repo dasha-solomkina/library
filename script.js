@@ -1,4 +1,12 @@
+const addBookBtn = document.querySelector(".add-book");
+const readBtn = document.querySelector(".read");
+const removeBtn = document.querySelector(".remove");
+
+
 const myLibrary = [];
+
+  
+
 
 function Book(title, author, pages,read) {
   this.title = title;
