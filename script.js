@@ -60,16 +60,21 @@ function addCard(arr) {
   newPages.classList.add('pages');
   newRead.classList.add('read');
   newRemove.classList.add("remove");
+  newRemove.setAttribute('id', arr.length-1);
   newTitle.textContent = arr[arr.length-1].title;
   newAuthor.textContent = arr[arr.length-1].author;
   newPages.textContent = arr[arr.length-1].pages;
   if(arr[arr.length-1].read == false) {
     newRead.classList.add("notread");
+    newRead.textContent = "not read";
+  } else {
+    newRead.textContent = "read";
   };
-  newDiv.appendChild(newTitle)
-  newDiv.appendChild(newAuthor)
-  newDiv.appendChild(newPages)
-  newDiv.appendChild(newRead)
+  newRemove.textContent = "remove";
+  newDiv.appendChild(newTitle);
+  newDiv.appendChild(newAuthor);
+  newDiv.appendChild(newPages);
+  newDiv.appendChild(newRead);
   newDiv.appendChild(newRemove);
   container.appendChild(newDiv);
 }
