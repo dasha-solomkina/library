@@ -12,7 +12,7 @@ function removeCard(element) {
   myLibrary.splice(divRemove.id, 1);
   container.removeChild(divRemove);
   updateId();
-}
+};
 
 function unRead(btn) {
   if (btn.classList.contains("notread")) {
@@ -40,13 +40,12 @@ function Book(title, author, pages,read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-}
+};
 
 // Open the pop-up to add a new book
 addBookBtn.addEventListener("click", () => {
   popup.removeAttribute("id");
-})
-
+});
 
 form.addEventListener("submit", () => {
   event.preventDefault();
@@ -57,8 +56,8 @@ form.addEventListener("submit", () => {
   myLibrary.push(new Book(title, author, pages, read));
   popup.setAttribute("id", "hidden");
   addCard(myLibrary);
-})
-
+  form.reset();
+});
 
 // Create a new card
 function addCard(arr) {
@@ -91,4 +90,4 @@ function addCard(arr) {
   newDiv.appendChild(newRead);
   newDiv.appendChild(newRemove);
   container.appendChild(newDiv);
-}
+};
