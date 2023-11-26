@@ -1,12 +1,10 @@
 window.addEventListener('click', (e)=> {
-  // console.log(e.target.parentNode.id)
   if (e.target.classList.contains("read")) {
-    unRead(e.target)
+    unRead(e.target);
   }
   if (e.target.classList.contains("remove")) {
     removeCard(e.target);
-  }
-
+  };
 });
 
 function removeCard(element) {
@@ -31,16 +29,10 @@ function updateId() {
   };
 };
 
-
-const readBtn = document.querySelectorAll(".read");
-const removeBtn = document.querySelector(".remove");
-
 const addBookBtn = document.querySelector(".add-book");
-
 const form = document.querySelector("#myForm");
 const container = document.querySelector(".container");
 const popup = document.querySelector("#hidden");
-
 let myLibrary = [];
 
 function Book(title, author, pages,read) {
@@ -50,23 +42,10 @@ function Book(title, author, pages,read) {
   this.read = read;
 }
 
-
-// open the pop up to add a book when button clicked
+// Open the pop-up to add a new book
 addBookBtn.addEventListener("click", () => {
   popup.removeAttribute("id");
 })
-
-// read vs unread
-
-// readBtn.forEach(function(btn) {
-//   btn.addEventListener("click", () => {
-//     if (btn.classList.contains("notread")) {
-//       btn.classList.remove("notread");
-//     } else {
-//       btn.classList.add("notread");
-//     };
-//   });
-// });
 
 
 form.addEventListener("submit", () => {
@@ -78,11 +57,10 @@ form.addEventListener("submit", () => {
   myLibrary.push(new Book(title, author, pages, read));
   popup.setAttribute("id", "hidden");
   addCard(myLibrary);
-
 })
 
 
-// add one more card
+// Create a new card
 function addCard(arr) {
   const newDiv = document.createElement("div");
   const newTitle = document.createElement("p");
@@ -97,13 +75,12 @@ function addCard(arr) {
   newPages.classList.add('pages');
   newRead.classList.add('read');
   newRemove.classList.add("remove");
-  // newRemove.setAttribute('id', arr.length-1);
   newTitle.textContent = arr[arr.length-1].title;
   newAuthor.textContent = arr[arr.length-1].author;
   newPages.textContent = arr[arr.length-1].pages;
   if(arr[arr.length-1].read == false) {
     newRead.classList.add("notread");
-    newRead.textContent = "not read";
+    newRead.textContent = "read";
   } else {
     newRead.textContent = "read";
   };
@@ -115,10 +92,3 @@ function addCard(arr) {
   newDiv.appendChild(newRemove);
   container.appendChild(newDiv);
 }
-
-
-// function addBookToLibrary() {
-  
-// }
-
-
