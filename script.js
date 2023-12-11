@@ -35,12 +35,22 @@ const container = document.querySelector(".container");
 const popup = document.querySelector("#hidden");
 let myLibrary = [];
 
-function Book(title, author, pages,read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-};
+// constructor
+// function Book(title, author, pages,read) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.read = read;
+// };
+
+class classBook{
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+}
 
 // Open the pop-up to add a new book
 addBookBtn.addEventListener("click", () => {
@@ -53,7 +63,8 @@ form.addEventListener("submit", () => {
   const author = document.querySelector("#author").value;
   const pages = document.querySelector("#pages").value;
   const read = document.querySelector("#read").checked;
-  myLibrary.push(new Book(title, author, pages, read));
+  //myLibrary.push(new Book(title, author, pages, read)); // done with the constructor
+  myLibrary.push(new classBook(title, author, pages, read)); // done with the class (upd)
   popup.setAttribute("id", "hidden");
   addCard(myLibrary);
   form.reset();
