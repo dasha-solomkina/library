@@ -44,4 +44,6 @@ yarn dev
 ## Live project
 
 You can access the Project Preview: [Library](https://dasha-solomkina.github.io/library/).
+</br>
 
+<img src="https://github.com/user-attachments/assets/ad0dc3c6-3cf8-46da-9683-e4b4bd37d9ac" alt="image" width="500"/>
